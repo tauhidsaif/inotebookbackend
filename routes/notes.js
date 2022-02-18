@@ -26,7 +26,6 @@ router.post('/addnote', fetchuser, [
 ], async (req, res) => {
 
     try {
-
         const { title, description, tag } = req.body
         // If there are errors , return bad request and the errors
         const errors = validationResult(req);
