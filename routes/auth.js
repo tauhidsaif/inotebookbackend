@@ -49,6 +49,7 @@ router.post('/createuser', [
         const name = req.body.name
         const authToken = jwt.sign(data, JWT_SECRET);
         res.json({success, authToken, email, name })
+        localStorage.setItem('username', json.name)
     } catch (error) {
         console.log(error.message)
         res.status(500).json("Internal server error")
